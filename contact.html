@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – FairFinance Finanzberatung | Jetzt Termin vereinbaren</title>
+    <meta name="description" content="Nehmen Sie Kontakt auf! Jetzt Termin vereinbaren für eine unabhängige Finanzberatung zu Altersvorsorge, Kapitalanlage & Versicherung.">
+    <meta name="keywords" content="Kontakt Finanzberater, Termin Finanzberatung, FairFinance Bremen, nachhaltige Finanzberatung">    
+    <meta name="author" content="FairFinance Finanzberatung">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- 📌 Navigation -->
+<header>
+    <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <!-- 🔹 Logo -->
+        <div class="logo">
+          <a href="index.html">FairFinance Finanzberatung</a>
+        </div>
+  
+        <!-- 🍔 Burger-Menü (Mobil) -->
+        <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+  
+        <!-- 🔹 Desktop-Menü -->
+        <ul class="desktop-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+  
+        <!-- 🔹 Mobiles Menü (Toggle via JS) -->
+        <ul class="mobile-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+    
+
+    <!-- 🎯 Hero-Bereich für Kontakt -->
+    <section class="hero hero-contact">
+        <h1>Kontaktieren Sie uns</h1>
+        <p>Wir helfen Ihnen gerne weiter. Nutzen Sie unser Kontaktformular oder vereinbaren Sie direkt einen Termin.</p>
+
+        <div class="hero-buttons">
+            <a href="tel:+494211234567" class="cta-button primary">📞 Jetzt anrufen</a>
+            <a href="https://wa.me/YOURWHATSAPPNUMBER" class="cta-button secondary" target="_blank">💬 WhatsApp schreiben</a>
+        </div>
+           <!-- 🏆 Vertrauens-Siegel -->
+       <div class="trust-icons">
+        <div class="trust-item">
+            <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy">
+            <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+            <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy">
+            <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+            <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy">
+            <p>Hervorragende Kundenbewertungen</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- 📩 Kontaktformular mit verbessertem Layout -->
+<section id="contact-form-section" class="contact-section">
+    <div class="contact-form-container">
+        <h2>Schreiben Sie uns eine Nachricht</h2>
+        <p>Nutzen Sie unser Formular für Ihre Anfrage – wir melden uns zeitnah zurück!</p>
+        
+        <form id="contact-form" action="submit_form.php" method="POST">
+            <div class="form-group">
+                <label for="name">Ihr Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Max Mustermann">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Ihre E-Mail-Adresse *</label>
+                <input type="email" id="email" name="email" required placeholder="max@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Ihre Nachricht *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Womit können wir Ihnen helfen?"></textarea>
+            </div>
+
+            <!-- 🛡️ Captcha-Schutz gegen Spam -->
+            <div class="form-group captcha-container">
+                <label id="captcha-question"></label>
+                <input type="text" id="captcha" required placeholder="Antwort eingeben">
+                <p id="captcha-error" class="error-message" style="display:none;">❌ Falsche Antwort. Bitte erneut versuchen.</p>
+            </div>
+
+            <button type="submit" class="cta-button primary">📨 Nachricht senden</button>
+        </form>
+    </div>
+</section>
+
+<!-- 📍 Kontaktmöglichkeiten mit optisch einheitlichem Bereich -->
+<section id="contact-info" class="contact-section">
+    <h2>Unsere Kontaktmöglichkeiten</h2>
+    <p>Sie können uns direkt erreichen – per Telefon, E-Mail oder persönlich.</p>
+
+    <div class="contact-container">
+        <div class="contact-box">
+            <h3>📞 Telefon</h3>
+            <p><a href="tel:+494211234567">+49 421 1234567</a></p>
+        </div>
+        <div class="contact-box">
+            <h3>📩 E-Mail</h3>
+            <p><a href="mailto:kontakt@FairFinance-finanzberatung.de">kontakt@fairfinance-finanzberatung.de</a></p>
+        </div>
+        <div class="contact-box">
+            <h3>📍 Adresse</h3>
+            <p>Bremer Straße 10, 28215 Bremen</p>
+        </div>
+    </div>
+</section>
+
+    <!-- 🗺️ Google Maps Integration -->
+    <section id="map">
+        <h2>Hier finden Sie uns</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.7857649859477!2d8.807164515770544!3d53.07929697991707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b123456789abcd%3A0x9876543210abcdef!2sBremer%20Stra%C3%9Fe%2010!5e0!3m2!1sde!2sde!4v1614900000000"
+                width="100%"  height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- ⭐ Kundenstimmen -->
+    <section id="testimonials" class="fade-in">
+        <h2>Das sagen unsere Kunden</h2>
+
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p>„Super schnelle Terminvergabe und eine ehrliche Beratung!“</p>
+                <strong>– Stefan W., Bremen</strong>
+            </div>
+            <div class="testimonial">
+                <p>„Freundlich, kompetent und unabhängig – genau, was ich gesucht habe.“</p>
+                <strong>– Lisa K., Hamburg</strong>
+            </div>
+            <div class="testimonial">
+                <p>„Ich habe mich bestens aufgehoben gefühlt. Sehr empfehlenswert!“</p>
+                <strong>– Anna S., Oldenburg</strong>
+            </div>
+        </div>
+
+        <div class="testimonial-controls">
+            <button id="prevTestimonial">⬅</button>
+            <button id="nextTestimonial">➡</button>
+        </div>
+    </section>
+
+      <!-- 📌 CTA zum Abschluss -->
+      <section id="cta">
+        <h2>Bereit für eine unabhängige Finanzberatung?</h2>
+        <p>Vereinbaren Sie jetzt eine kostenlose Erstberatung.</p>
+        <div class="cta-container">
+            <a href="#" class="cta-button">Jetzt Termin buchen</a>
+        </div>
+        
+    </section>
+
+    <!-- 📞 Floating-Kontakt-Button -->
+    <button id="floating-button">📞</button>
+    <div id="contact-options">
+        <a href="contact.html">📩 Kontaktformular</a>
+        <a href="tel:+494211234567">📞 Anrufen</a>
+        <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+    </div>
+
+     <!-- 📌 Footer mit Siegeln -->
+     <footer>
+        <div class="footer-container">
+            <div class="footer-trust">
+                <div class="trust-item">
+                    <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy">
+                    <p>Top Finanzberatung 2025 (Geprüft)</p>
+                </div>
+                <div class="trust-item">
+                    <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy">
+                    <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+                </div>
+                <div class="trust-item">
+                    <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy">
+                    <p>Hervorragende Kundenbewertungen</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="faq.html">Häufige Fragen</a>
+            </div>
+            <div class="dark-mode-footer">
+                <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+                  <span class="toggle-icon" id="toggleIcon">🌙</span>
+                  <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+                </button>
+            <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>

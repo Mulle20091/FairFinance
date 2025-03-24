@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renditerechner – FairFinance Finanzberatung</title>
+  <meta name="description" content="Berechnen Sie mit dem Renditerechner, welche jährliche Rendite Sie für Ihre Kapitalanlage benötigen. Jetzt kostenlos ausprobieren!" />
+  <meta name="keywords" content="Renditerechner, Kapitalanlage, Finanzplanung, Investment Rendite" />
+  <meta name="author" content="FairFinance Finanzberatung" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="renditerechner.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<!-- 📌 Navigation -->
+<header>
+    <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <!-- 🔹 Logo -->
+        <div class="logo">
+          <a href="index.html">FairFinance Finanzberatung</a>
+        </div>
+  
+        <!-- 🍔 Burger-Menü (Mobil) -->
+        <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+  
+        <!-- 🔹 Desktop-Menü -->
+        <ul class="desktop-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+  
+        <!-- 🔹 Mobiles Menü (Toggle via JS) -->
+        <ul class="mobile-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 🎯 Hero-Bereich -->
+  <section class="hero hero-about">
+    <div class="hero-content">
+      <h1>Ihre Rendite im Blick</h1>
+      <p class="hero-subline">
+        Ermitteln Sie mit wenigen Angaben, welche jährliche Rendite Sie benötigen – oder wie viel Sie mit einer bestimmten Verzinsung erreichen können.
+      </p>
+      <a href="contact.html" class="cta-button">Individuelle Beratung vereinbaren</a>
+    </div>
+  </section>
+  
+
+<!-- 📈 Renditerechner -->
+<section>
+  <h2>📈 Renditerechner</h2>
+  <div class="contact-form-container">
+    <form id="renditeForm">
+      <label for="startkapital">
+        💰 Startkapital (€)
+        <span class="tooltip" title="Der Betrag, mit dem Sie investieren.">❓</span>
+      </label>
+      <input type="number" id="startkapital" placeholder="z. B. 10.000" />
+      
+      <label for="monatlich">
+        📥 Monatlicher Sparbetrag in €/Monat (optional)
+        <span class="tooltip" title="Zusätzlicher Betrag, den Sie regelmäßig investieren – z. B. 100 € pro Monat.">❓</span>
+      </label>
+      <input type="number" id="monatlich" placeholder="z. B. 100" min="0" />
+      
+      <label for="zielbetrag">
+        🎯 Zielbetrag (€)
+        <span class="tooltip" title="Tragen Sie hier Ihr Sparziel ein – oder alternativ die erwartete Rendite unten.">❓</span>
+      </label>
+      <input type="number" id="zielbetrag" placeholder="z. B. 20.000" />
+      
+      <label for="rendite">
+        📈 Erwartete jährliche Rendite (%)
+        <span class="tooltip" title="Alternativ zur Zielangabe: Welche jährliche Verzinsung erwarten Sie?">❓</span>
+      </label>
+      <input type="number" id="rendite" placeholder="z. B. 5" step="0.01" />
+      
+      <label for="laufzeit">
+        ⏳ Anlagezeitraum (Jahre)
+        <span class="tooltip" title="Der Zeitraum, über den Sie Ihr Kapital investieren möchten.">❓</span>
+      </label>
+      <input type="number" id="laufzeit" placeholder="z. B. 10" />
+      
+      
+
+      <p class="form-hinweis">
+        💡 Bitte tragen Sie <strong>entweder den Zielbetrag ODER die erwartete Rendite</strong> ein – das jeweils andere Feld wird automatisch berechnet.
+      </p>
+    </form>
+
+    <div id="renditeErgebnis" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <div class="chart-wrapper">
+      <canvas id="renditeChart" aria-label="Diagramm zur Kapitalentwicklung"></canvas>
+    </div>
+
+    <p class="info-hinweis">
+      📌 Hinweis: Diese Berechnung dient Ihrer ersten Orientierung und ersetzt keine individuelle Anlageberatung.
+      Renditen sind nicht garantiert und unterliegen Marktschwankungen.
+    </p>
+  </div>
+</section>
+
+
+  <div id="cta" class="faq-cta">
+    <h2>Wie lässt sich Ihre Rendite nachhaltig optimieren?</h2>
+    <p>Jede Entscheidung hat Auswirkungen – wir helfen Ihnen, den besten Weg zu finden. Lassen Sie uns gemeinsam Ihre Strategie besprechen.</p>
+    <a href="contact.html" class="cta-button">Jetzt unverbindlich beraten lassen</a>
+  </div>
+  
+</section>
+
+
+
+  <!-- 📞 Floating-Kontakt-Button -->
+  <button id="floating-button">📞</button>
+  <div id="contact-options">
+    <a href="contact.html">📩 Kontaktformular</a>
+    <a href="tel:+494211234567">📞 Anrufen</a>
+    <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- 📌 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">Häufige Fragen</a>
+      </div>
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+</body>
+</html>

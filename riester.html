@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riester-Vorteilsrechner | FairFinance</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="riester.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+<!-- 📌 Navigation -->
+<header>
+    <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <!-- 🔹 Logo -->
+        <div class="logo">
+          <a href="index.html">FairFinance Finanzberatung</a>
+        </div>
+  
+        <!-- 🍔 Burger-Menü (Mobil) -->
+        <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+  
+        <!-- 🔹 Desktop-Menü -->
+        <ul class="desktop-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+  
+        <!-- 🔹 Mobiles Menü (Toggle via JS) -->
+        <ul class="mobile-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+<!-- 🦸‍♀️ Hero-Bereich -->
+<section class="hero">
+    <h1>Riester-Vorteilsrechner</h1>
+    <p class="hero-subline">
+      Ermitteln Sie in wenigen Schritten, wie viel Riester-Förderung Sie wirklich erhalten – transparent, individuell und kostenlos.
+    </p>
+    <div class="cta-container">
+      <a href="contact" class="cta-button">Beratung zu Ihren Förderchancen</a>
+    </div>
+  </section>
+  
+
+    <!-- 📊 Rechner-Bereich -->
+    <section id="rechner">
+      <h2>💡 Ihre möglichen Riester-Zulagen</h2>
+      <div class="contact-form-container">
+        <form id="riesterForm">
+          <div class="form-group">
+            <label for="bruttoeinkommen">Jährliches Bruttoeinkommen <span class="einheit">(in €)</span></label>
+            <input type="number" id="bruttoeinkommen" placeholder="z. B. 42.000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="anzahlKinder">Anzahl Kinder insgesamt</label>
+            <input type="number" id="anzahlKinder" min="0" value="0" />
+          </div>
+          
+          <div class="form-group">
+            <label for="kinderNach2008">Davon geboren ab inkl. 2008</label>
+            <input type="number" id="kinderNach2008" min="0" value="0" />
+          </div>
+          
+          
+          <div class="form-group">
+            <label for="beitrag">Ihr jährlicher Riester-Beitrag (€)</label>
+            <input type="number" id="beitrag" placeholder="z. B. 1.200" required />
+          </div>
+
+          <div class="form-group" id="gemischtKinderAnzahl" style="display: none;">
+            <label for="kinderNach2008">Davon geboren nach 2008:</label>
+            <input type="number" id="kinderNach2008" placeholder="z. B. 1" min="0" />
+          </div>
+          
+
+          <p class="info-hinweis rechner-hinweis">
+            📌 Hinweis: Diese Berechnung dient zur ersten Orientierung und ersetzt keine individuelle Beratung. Die tatsächlichen Zulagen können abweichen.
+          </p>
+          
+        </form>
+
+        <div id="riesterErgebnis" class="rechner-ergebnis"></div>
+        
+        <div class="info-hinweis steuer-hinweis">
+            🔍 <strong>Steuerlicher Vorteil:</strong> Die steuerliche Wirkung von Riester hängt von Ihrem Einkommen und Ihrer Familiensituation ab.  
+            Unser Rechner zeigt die staatliche Förderung – eine mögliche Steuerersparnis kann zusätzlich über Ihre Steuererklärung erfolgen.  
+            Das Finanzamt prüft automatisch, ob Sie durch den Sonderausgabenabzug zusätzlich profitieren („Günstigerprüfung“).
+          </div>
+          
+      </div>
+
+          <!-- ✅ CTA nach Rechner -->
+    <div id="cta" class="faq-cta">
+        <h2>Nutzen Sie Ihre Fördermöglichkeiten optimal</h2>
+        <p>
+        Ob Riester für Sie geeignet ist, hängt von vielen Faktoren ab. Wir helfen Ihnen, Chancen und Risiken realistisch einzuschätzen – transparent und unabhängig.
+        </p>
+        <a href="contact.html" class="cta-button">Jetzt unverbindlich beraten lassen</a>
+
+      </div>
+    </section>
+
+
+
+
+  <!-- 📞 Floating-Kontakt-Button -->
+  <button id="floating-button">📞</button>
+  <div id="contact-options">
+    <a href="contact.html">📩 Kontaktformular</a>
+    <a href="tel:+494211234567">📞 Anrufen</a>
+    <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- 📌 Footer mit Trust-Siegeln -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">Häufige Fragen</a>
+      </div>
+
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+
+    <!-- 🌙 Dark Mode Toggle -->
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+  
+  </body>
+</html>

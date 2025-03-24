@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rentenlücken-Rechner – FairFinance Finanzberatung</title>
+  <meta name="description" content="Berechnen Sie Ihre persönliche Rentenlücke – einfach & verständlich. Ideal für Angestellte & Selbstständige." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
+  <script defer src="rentenluecke.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <!-- 🔹 Logo -->
+            <div class="logo">
+              <a href="index.html">FairFinance Finanzberatung</a>
+            </div>
+      
+            <!-- 🍔 Burger-Menü (Mobil) -->
+            <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+      
+            <!-- 🔹 Desktop-Menü -->
+            <ul class="desktop-menu">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="about.html">Über uns</a></li>
+              <li><a href="services.html">Leistungen</a></li>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="faq.html">FAQs</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+      
+            <!-- 🔹 Mobiles Menü (Toggle via JS) -->
+            <ul class="mobile-menu">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="about.html">Über uns</a></li>
+              <li><a href="services.html">Leistungen</a></li>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="faq.html">FAQs</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </div>
+    </nav>
+  </header>
+
+  <!-- Hero-Bereich -->
+  <section class="hero hero-about">
+    <div class="hero-content">
+      <h1>Ihre Rentenlücke im Blick</h1>
+      <p class="hero-subline">
+        Viele unterschätzen, wie groß die Versorgungslücke im Alter sein kann – dieser Rechner hilft Ihnen, einen realistischen Eindruck zu gewinnen.
+      </p>
+      <a href="contact.html" class="cta-button">Individuelle Vorsorgeberatung anfragen</a>
+      
+    </div>
+  </section>
+
+  <!-- Rechner-Bereich -->
+  <section>
+    <h2>🧓 Rentenlücken-Rechner</h2>
+    <form id="rentenForm">
+        <div class="form-group">
+          <label for="wunschRente">
+            Gewünschte monatliche Rente in Euro
+            <span class="tooltip" title="Faustformel: ca. 70–80 % Ihres letzten Nettogehalts">❓</span>
+          </label>
+          <input type="number" id="wunschRente" required placeholder="z. B. 2.000 €" />
+        </div>
+      
+        <div class="form-group">
+          <label for="gesetzlicheRente">Erwartete gesetzliche Rente (netto)</label>
+          <input type="number" id="gesetzlicheRente" required placeholder="z. B. 1.200 €" />
+        </div>
+      
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="hatVorsorge" />
+          <label for="hatVorsorge">Ich habe bereits private Altersvorsorge</label>
+        </div>
+      
+        <div class="form-group" id="vorsorgeFeld" style="display: none;">
+          <label for="vorsorgeRente">Monatlicher Betrag aus privater Vorsorge</label>
+          <input type="number" id="vorsorgeRente" placeholder="z. B. 300 €" />
+        </div>
+      
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="inflation" />
+          <label for="inflation">Inflation von 2 % jährlich berücksichtigen</label>
+        </div>
+      
+        <div class="form-group">
+          <label for="rentendauer">Erwartete Rentenbezugsdauer in Jahren</label>
+          <input type="number" id="rentendauer" placeholder="z. B. 25" />
+        </div>
+      </form>
+      
+
+    <div class="results-box">
+      <h3>📊 Ergebnis</h3>
+      <p><strong>Monatliche Rentenlücke:</strong> <span id="ergebnisLuecke">–</span></p>
+      <p><strong>Gesamte Versorgungslücke über die Rentenzeit:</strong> <span id="ergebnisGesamt">–</span></p>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="rentenChart"></canvas>
+      </div>
+      
+
+    <div id="cta" style="margin-top: 40px;">
+        <h2>✅ Jetzt handeln statt später bereuen</h2>
+        <p>
+          Die beste Altersvorsorge ist die, die frühzeitig geplant wird. Wenn Sie eine persönliche Einschätzung oder Hilfe bei der Auswahl geeigneter Produkte wünschen, sind wir gerne für Sie da.
+        </p>
+        <a href="contact.html" class="cta-button">Kostenfreie Erstberatung vereinbaren</a>
+      </div>
+      
+  </section>
+
+  <!-- Floating Button -->
+  <button id="floating-button">📞</button>
+  <div id="contact-options">
+    <a href="contact.html">📩 Kontaktformular</a>
+    <a href="tel:+494211234567">📞 Anrufen</a>
+    <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">FAQs</a>
+      </div>
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon">🌙</span>
+        <span class="toggle-text">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+</body>
+</html>
