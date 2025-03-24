@@ -247,7 +247,22 @@ section + section {
     .mobile-menu.show {
         display: block; /* Menü sichtbar machen */
     }
+    .nav-container {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      
+  .logo {
+    max-width: 75%;
+    flex: 1 1 auto;
+  }
 
+  .logo a {
+    font-size: 1.4rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.3;
+  }
     .burger-menu {
         display: block;
         cursor: pointer;
