@@ -234,19 +234,18 @@ section + section {
 /* Standard Navigation ausblenden auf mobilen Geräten */
 @media (max-width: 768px) {
     .sticky-nav ul {
-        display: none; /* Verhindert Überlappung */
-        flex-direction: column;
+        z-index: 9999; /* ganz nach oben */
         position: absolute;
-        top: 60px;
-        left: 0;
+        top: 100%; /* direkt unter dem Header */
+        right: 0;
+        background-color: var(--background-color); /* oder konkret #fff / #111 */
         width: 100%;
-        background: var(--primary-color);
-        text-align: center;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        padding: 1rem;
+        display: none; /* wird bei Klick eingeblendet */
+      }
 
     .mobile-menu.show {
-        display: flex; /* Menü sichtbar machen */
+        display: block; /* Menü sichtbar machen */
     }
 
     .burger-menu {
@@ -257,6 +256,8 @@ section + section {
         background: none;
         border: none;
         color: var(--box-light);
+        z-index: 10000; /* Höher als das Logo */
+        position: relative; /* Oder absolute bei Bedarf */
     }
 }
 
@@ -2223,15 +2224,19 @@ body.dark header {
     color: #e0f2fe;
   }
   
-
-@media (max-width: 768px) {
-  header .logo h1 {
-    font-size: 1.25rem; /* vorher vermutlich 2rem oder mehr */
-    line-height: 1.4;
-    white-space: normal; /* Erlaubt Umbruch */
+  @media (max-width: 768px) {
+    header .logo h1 {
+      font-size: 1.25rem; /* vorher vermutlich 2rem oder mehr */
+      line-height: 1.4;
+      white-space: normal; /* Erlaubt Umbruch */
+    }
+  
+    header .logo {
+      max-width: 70%;
+    }
   }
-
-  header .logo {
-    max-width: 70%;
+  header {
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
-}
+  
