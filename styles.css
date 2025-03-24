@@ -2224,3 +2224,14 @@ body.dark header {
   }
   
 
+@media (max-width: 768px) {
+  header .logo h1 {
+    font-size: 1.25rem; /* vorher vermutlich 2rem oder mehr */
+    line-height: 1.4;
+    white-space: normal; /* Erlaubt Umbruch */
+  }
+
+  header .logo {
+    max-width: 70%;
+  }
+}
