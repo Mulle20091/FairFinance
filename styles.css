@@ -170,26 +170,65 @@ section + section {
 .desktop-menu a:hover {
     color: var(--accent-color);
 }
+@media (max-width: 768px) {
+    .logo a {
+      max-width: 65%;
+      font-size: 1.2rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+    }
+  
+    .desktop-menu {
+      display: none;
+    }
+  
+    .nav-container {
+      flex-wrap: nowrap;
+    }
 
+  
+    .logo {
+      flex-shrink: 1;
+    }
+  }
+  
+  
 
 /* ==============================
-   🍔 Burger-Menü für Mobilgeräte
+   🍔 Burger-Menü für Mobilgeräte (Designsystem)
    ============================== */
-.burger-menu {
+   .burger-menu {
     display: none;
+    background: var(--primary-color); /* Hauptfarbe deiner Seite */
+    border: 2px solid white; /* Klarer Kontrast */
+    border-radius: 8px;
     flex-direction: column;
-    cursor: pointer;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
     padding: 10px;
+    z-index: 1001;
+    color: var(--box-light); /* Text/Icon-Farbe */
+    transition: all 0.3s ease-in-out;
 }
 
-.burger-menu span {
-    width: 30px;
-    height: 3px;
-    background: var(--box-light);
-    border-radius: 3px;
-    transition: all 0.3s;
+.burger-menu:hover {
+    background: var(--accent-color);
+    border-color: var(--primary-color);
+    color: white;
 }
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+}
+
+
+
+
+
 
 /* 🔹 Mobiles Menü standardmäßig ausblenden */
 .mobile-menu {
@@ -234,64 +273,23 @@ section + section {
 /* Standard Navigation ausblenden auf mobilen Geräten */
 @media (max-width: 768px) {
     .sticky-nav ul {
-        z-index: 9999; /* ganz nach oben */
+        display: none; /* Verhindert Überlappung */
+        flex-direction: column;
         position: absolute;
-        top: 100%; /* direkt unter dem Header */
-        right: 0;
-        background-color: var(--background-color); /* oder konkret #fff / #111 */
+        top: 60px;
+        left: 0;
         width: 100%;
-        padding: 1rem;
-        display: none; /* wird bei Klick eingeblendet */
-      }
+        background: var(--primary-color);
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
     .mobile-menu.show {
-        display: block; /* Menü sichtbar machen */
+        display: flex; /* Menü sichtbar machen */
     }
-    .nav-container {
-        flex-wrap: wrap;
-        align-items: flex-start;
-      }
-      
-  .logo {
-    max-width: 75%;
-    flex: 1 1 auto;
-  }
 
-/* 📱 Maximalbreite für Logo-Text in Mobile View */
-@media (max-width: 768px) {
-    .logo a {
-      display: block;
-      max-width: 70%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-  
-    .burger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        padding: 10px;
-        background: none;
-        border: none;
-        color: var(--box-light);
-        z-index: 10000; /* Höher als das Logo */
-        position: relative; /* Oder absolute bei Bedarf */
-    }
 }
 
-/* Standardmäßig das Burger-Icon verstecken */
-.burger-menu {
-    display: none; /* Nur auf Mobile sichtbar */
-}
-
-/* Nur auf mobilen Geräten das Menü anzeigen */
-@media (max-width: 768px) {
-    .burger-menu {
-        display: block;
-    }
-}
 
 
 
@@ -303,7 +301,7 @@ section + section {
 
    .hero {
     text-align: center;
-    padding: 120px 20px 60px; /* Weniger Platz unten */
+    padding: 60px 20px 30px; /* Weniger Platz unten */
     background: linear-gradient(rgba(31, 59, 92, 0.85), rgba(31, 59, 92, 0.7)), url('img/hero-background.jpg') center/cover;
     background-size: cover;
     background-position: center;
@@ -467,7 +465,7 @@ section + section {
     border-radius: 12px;
     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
     margin: 40px auto;
-    max-width: 1325px; /* 🟢 Jetzt gleich breit wie deine Content-Boxen */
+    max-width: 1000px; /* 🟢 Jetzt gleich breit wie deine Content-Boxen */
     width: 100%;
 }
 
@@ -498,6 +496,8 @@ section + section {
         align-items: center;
         padding: 20px;
         gap: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .trust-icons .trust-item {
@@ -865,26 +865,9 @@ footer {
     }
 
     .hero {
-        padding: 100px 20px;
-        text-align: center;
-        background-position: center center;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+        padding: 120px 15px;
+    }
 
-      .hero h1 {
-        font-size: 1.8rem;
-        line-height: 1.4;
-        margin-bottom: 15px;
-      }
-
-      .hero-subline {
-        font-size: 1rem;
-        max-width: 90%;
-      }
     .hero-about {
         padding: 100px 15px;
         min-height: auto;
@@ -2080,7 +2063,7 @@ body.dark-mode.tools-page .service-box {
   
 
   .results-box {
-    background: #e0f2fe; /* hellblauer Hintergrund */
+    background: var(--background-soft);
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -2088,16 +2071,8 @@ body.dark-mode.tools-page .service-box {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     font-size: 1.1rem;
     font-weight: 600;
-    color: #1e3a8a; /* kräftiges Blau */
-    border-left: 6px solid #0ea5e9;
+    color: var(--primary-color);
   }
-  
-  body.dark .results-box {
-    background-color: #1e293b;
-    color: #e0f2fe;
-    border-left: 6px solid #0ea5e9;
-  }
-  
   
   .checkbox-group {
     display: flex;
@@ -2182,98 +2157,147 @@ input[type=number] {
     font-size: 0.95rem;
     margin-left: 4px;
   }
-  
-  /* 🛠️ Dark Mode Optimierung für Tools & Eingaben */
-body.dark .contact-form-container,
-body.dark .rechner-section {
-  background-color: #1f2937;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  color: #f3f4f6;
-}
-
-body.dark input[type="number"],
-body.dark select,
-body.dark input[type="checkbox"] {
-  background-color: #374151;
-  color: #f9fafb;
-  border: 1px solid #4b5563;
-}
-
-body.dark .tooltip {
-  background-color: #4b5563;
-  color: #f9fafb;
-}
-
-/* Diagramm-Hintergrund */
-body.dark canvas {
-  background-color: #1f2937;
-}
-
-body.dark header {
-    background-color: #0f172a; /* Satteres Dunkelblau */
+  .rechner-ergebnis {
+    margin-top: 20px;
+    padding: 1.2rem;
+    background-color: #ecfdf5;
+    border: 1px solid #10b981;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #065f46;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   }
   
-  body.dark .cta-button {
-    background-color: #0ea5e9;
-    color: #f9fafb;
-    border: none;
-  }
   
-  body.dark .cta-button:hover {
-    background-color: #38bdf8;
-  }
-  
-  /* 📘 Hinweisboxen für Riester-Rechner im Light Mode */
   .rechner-hinweis {
-    background-color: #fff8e1;
-    border-left: 5px solid #fbbf24;
-    padding: 1rem 1.2rem;
+    background-color: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+    padding: 1rem;
+    border-radius: 0.5rem;
     margin-top: 1.5rem;
-    border-radius: 8px;
     font-size: 0.95rem;
-    line-height: 1.5;
-    color: #92400e;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    line-height: 1.4;
+    color: #075985;
   }
+  
   
   .steuer-hinweis {
-    background-color: #e0f7fa;
-    border-left: 5px solid #0ea5e9;
-    padding: 1rem 1.2rem;
+    background-color: #fefce8;
+    border-left: 4px solid #facc15;
+    padding: 1rem;
+    border-radius: 0.5rem;
     margin-top: 1.5rem;
-    border-radius: 8px;
     font-size: 0.95rem;
-    line-height: 1.5;
-    color: #0c4a6e;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    line-height: 1.4;
+    color: #78350f;
   }
   
-  body.dark .rechner-hinweis {
-    background-color: #3f3f46;
-    border-left: 5px solid #facc15;
-    color: #fef3c7;
-  }
+  .rechner-hinweis:hover,
+.steuer-hinweis:hover {
+  background-color: #e0f2fe;
+}
+.rechner-ergebnis:hover {
+  background-color: #d1fae5;
+}
+
   
-  body.dark .steuer-hinweis {
-    background-color: #334155;
-    border-left: 5px solid #0ea5e9;
-    color: #e0f2fe;
-  }
-  
-  @media (max-width: 768px) {
-    header .logo h1 {
-      font-size: 1.25rem; /* vorher vermutlich 2rem oder mehr */
-      line-height: 1.4;
-      white-space: normal; /* Erlaubt Umbruch */
+/* 🌙 Dark Mode Styles für alle Rechner */
+@media (prefers-color-scheme: dark) {
+    input[type="number"],
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      background-color: #1f2937;
+      color: #f3f4f6;
+      border: 1px solid #374151;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
     }
   
-    header .logo {
-      max-width: 70%;
+    input::placeholder,
+    textarea::placeholder {
+      color: #9ca3af;
+    }
+  
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #0ea5e9;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.5);
     }
   }
-  header {
-    flex-wrap: wrap;
-    align-items: flex-start;
+  
+  
+    .contact-form-container,
+    .rechner-hinweis,
+    .steuer-hinweis {
+      background-color: #111827;
+      border-color: #4b5563;
+      color: #f3f4f6;
+    }
+  
+    @media (prefers-color-scheme: dark) {
+        .cta-button {
+          background-color: #0284c7;
+          color: #fefefe;
+          border: none;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+          transition: background-color 0.3s ease;
+        }
+      
+        .cta-button:hover {
+          background-color: #0ea5e9;
+        }
+      }
+      
+    .tooltip {
+      color: #facc15;
+    }
+  
+    .chart-wrapper canvas {
+      background-color: #1e293b;
+      border-radius: 8px;
+    }
+  
+    .info-hinweis {
+      background-color: #1e293b;
+      border: 1px solid #4b5563;
+      color: #fcd34d;
+    }
+  
+    #renditeErgebnis,
+    #rentenErgebnis,
+    #riesterErgebnis {
+      background-color: #111827;
+      border: 1px solid #4b5563;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+  
+  
+  @media (prefers-color-scheme: dark) {
+    header,
+    nav {
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+  
+    nav a {
+      color: #f3f4f6;
+    }
+  
+    nav a:hover {
+      color: #0ea5e9;
+    }
+  
+    .burger-icon span {
+      background-color: #f3f4f6;
+    }
   }
   
