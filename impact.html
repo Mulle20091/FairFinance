@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Impact-Rechner für nachhaltige Geldanlage – FairFinance" />
+    <meta property="og:description" content="Ermitteln Sie Ihre CO₂-, Wasser- & Energieeinsparung mit ESG-, SRI- oder Impact-ETFs. Jetzt Wirkung berechnen!" />
+    <meta name="robots" content="index, follow" />
+  <title>Nachhaltigkeitswirkung berechnen – FairFinance</title>
+  <meta name="description" content="Ermitteln Sie die Nachhaltigkeitswirkung Ihrer Geldanlage. Vergleichen Sie klassische ETFs mit ESG-, SRI- oder Impact-ETFs." />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="impact.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- 📌 Navigation -->
+<header>
+    <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <!-- 🔹 Logo -->
+        <div class="logo">
+          <a href="index.html">FairFinance Finanzberatung</a>
+        </div>
+  
+        <!-- 🍔 Burger-Menü (Mobil) -->
+        <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+  
+        <!-- 🔹 Desktop-Menü -->
+        <ul class="desktop-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+  
+        <!-- 🔹 Mobiles Menü (Toggle via JS) -->
+        <ul class="mobile-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero hero-impact">
+    <h1>🌱 Nachhaltig investieren. Wirkung spüren.</h1>
+    <p class="hero-subline">
+      Wie viele Tonnen CO₂ vermeiden Sie mit Ihrer Geldanlage? 
+      Unser Rechner zeigt, wie klassische, ESG- oder Impact-ETFs wirklich wirken.
+    </p>
+    <div class="cta-container">
+      <a href="contact.html" class="cta-button primary">Jetzt kostenlos beraten lassen</a>
+    </div>
+  </section>
+  
+
+<section id="calc-wrapper">
+  <h2>💡 Ihr Impact im Vergleich</h2>
+  <div class="contact-form-container">
+    <form class="calculator-form">
+      <div class="form-group">
+        <label for="investment">Investitionsbetrag <span class="einheit">(in Euro)</span></label>
+        <input type="range" id="investment" min="1000" max="1000000" step="500" value="10000" oninput="updateValue(this.value)" />
+        <div class="slider-output-wrapper">
+            <span id="investmentValue" class="slider-value-bubble">10.000 €</span>
+            <span class="slider-info">← Betrag über Schieberegler anpassen</span>  
+        </div>
+          
+          
+      </div>
+
+      <div class="form-group">
+        <label for="etfType">ETF-Typ</label>
+        <select id="etfType">
+          <option value="classic">Klassischer ETF (z. B. MSCI World)</option>
+          <option value="esg">ESG-ETF (z. B. iShares ESG Screened)</option>
+          <option value="sri">SRI-ETF (z. B. UBS SRI Global)</option>
+          <option value="impact">Impact-ETF (z. B. Clean Energy, Triodos)</option>
+        </select>
+      </div>
+    </form>
+
+    <div id="impactResult" class="etf-ergebnis-box rechner-ergebnis impact-output-box">
+        <h3>🌍 Ihre nachhaltige Wirkung</h3>
+        <ul id="impactList" class="impact-list">
+          <!-- Dynamisch per JS -->
+          <!-- z. B.: <li>♻️ CO₂-Einsparung: 1,2 Tonnen/Jahr</li> -->
+        </ul>
+      </div>
+      
+
+      <div class="info-hinweis steuer-hinweis">
+        📊 Die Berechnungen basieren auf realen Vergleichsdaten führender Anbieter wie MSCI, iShares, UBS und Triodos.  
+        Bewertungsmaßstäbe wie das FNG-Siegel und SRI-Indizes liefern die Grundlage. Die Wirkung kann je nach Fonds abweichen.
+        <p class="small-hinweis">
+            Beispielhafte Quelle: MSCI ESG Fund Metrics 2024, FNG-Reports, iShares ESG Impact Summary.
+          </p>
+          
+    
+    </div>
+      
+      
+  </div>
+
+  <div id="cta" class="faq-cta">
+    <h2>Ihre Geldanlage wirkt – wenn Sie es wollen</h2>
+    <p>Nachhaltige ETFs können echten Unterschied machen. Nutzen Sie unsere Beratung für Ihre individuelle Impact-Strategie.</p>
+    <a href="contact.html" class="cta-button">Jetzt Impact-Portfolio anfragen</a>
+  </div>
+</section>
+
+
+  <!-- 📞 Floating-Kontakt-Button -->
+  <button id="floating-button">📞</button>
+  <div id="contact-options">
+    <a href="contact.html">📩 Kontaktformular</a>
+    <a href="tel:+494211234567">📞 Anrufen</a>
+    <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- 📌 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">Häufige Fragen</a>
+      </div>
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+
+</body>
+</html>

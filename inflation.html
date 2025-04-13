@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inflationscheck – FairFinance</title>
+  <meta name="description" content="Berechnen Sie den Kaufkraftverlust durch Inflation seit 1950. Realistische Daten & Vergleichswerte. Jetzt Inflationsausgleich planen!" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="inflation.js"></script>
+</head>
+
+<body>
+ <!-- 🔹 Navigation -->
+<header>
+    <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <div class="logo"><a href="index.html">FairFinance Finanzberatung</a></div>
+        <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+        <ul class="desktop-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <ul class="mobile-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- 🎯 Hero -->
+  <section class="hero">
+    <h1>📉 Kaufkraftverlust durch Inflation berechnen</h1>
+    <p class="hero-subline">Erfahren Sie, wie viel Ihr Geld über die Jahre real an Wert verliert – auf Basis echter Daten von 1950 bis heute.</p>
+    <div class="cta-container">
+      <a href="contact.html" class="cta-button">💡 Beratung zur inflationssicheren Geldanlage</a>
+    </div>
+  </section>
+  
+
+<!-- 📊 Inflationsrechner -->
+<section id="calc-wrapper">
+    <h2>🧮 Inflationscheck: Was bleibt real übrig?</h2>
+    <div class="contact-form-container">
+        <form class="calculator-form">
+            <div class="form-group">
+              <label for="startYear">Zeitraum wählen <span class="einheit">(1950–2040)</span></label>
+              <div class="slider-group">
+                <div class="slider-labels">
+                  <label for="startYear">Von: <output id="startOutput">1995</output></label>
+                  <label for="endYear">Bis: <output id="endOutput">2024</output></label>
+                </div>
+                <input type="range" id="startYear" min="1950" max="2040" value="1995" />
+                <input type="range" id="endYear" min="1950" max="2040" value="2024" />
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="futureInflation">Inflationsprognose ab 2025 <span class="einheit">(Ø pro Jahr)</span></label>
+              <input type="range" id="futureInflation" min="0" max="5" step="0.1" value="2.0" />
+              <div class="slider-value">💡 Aktueller Wert: <strong><output id="futureValue">2.0 %</output></strong></div>
+            </div>
+          </form>
+          
+  
+     
+  
+      <div id="inflationErgebnis" class="etf-ergebnis-box rechner-ergebnis" aria-live="polite">
+        <!-- Ergebnis erscheint hier -->
+      </div>
+  
+      <div class="info-hinweis steuer-hinweis">
+        🔍 Grundlage: Offizielle Inflationsraten der Bundesbank & Destatis (1950–2024), Prognose ab 2025 auf Basis Ihrer Auswahl.
+      </div>
+    </div>
+    <div id="cta" class="faq-cta">
+      <h2>Planen Sie Ihren Inflationsausgleich</h2>
+      <p>Erfahren Sie, wie Sie Ihr Geld inflationsgeschützt anlegen können. Wir beraten Sie individuell.</p>
+      <a href="contact.html" class="cta-button">Jetzt Beratung anfragen</a>
+    </div>
+  </section>
+
+  <!-- 📞 Floating-Kontakt-Button -->
+  <button id="floating-button">📞</button>
+  <div id="contact-options">
+    <a href="contact.html">📩 Kontaktformular</a>
+    <a href="tel:+494211234567">📞 Anrufen</a>
+    <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- 📌 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">Häufige Fragen</a>
+      </div>
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+</body>
+</html>

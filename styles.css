@@ -28,6 +28,13 @@
     --background-light: #F4F7FC;            /* Weichere Hintergrundfarbe für bessere Lesbarkeit */
     --background-soft: #F9FAFB;
     --footer-bg: #1F2937;
+    --calc-bg-light: #ffffff;
+    --calc-bg-dark: #1f2937;
+    --calc-border: #d1d5db;
+    --calc-border-focus: var(--accent-color);
+    --calc-text: #1f2937;
+    --calc-text-dark: #f3f4f6;
+    --calc-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     --background-gradient-light: linear-gradient(to right, #E6ECF5, #C9D6E8);
     --box-light: #ffffff;
     --text-light: #4F4F4F;
@@ -2055,10 +2062,11 @@ body.dark-mode.tools-page .service-box {
     margin-bottom: 20px;
   }
   
-  label {
-    font-weight: 600;
-    display: block;
+  .form-group label {
     margin-bottom: 6px;
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
   }
   
 
@@ -2074,25 +2082,6 @@ body.dark-mode.tools-page .service-box {
     color: var(--primary-color);
   }
   
-  .checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .checkbox-group input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    accent-color: var(--accent-color);
-  }
-  
-  .checkbox-group label {
-    margin: 0;
-    font-weight: 500;
-    cursor: pointer;
-  }
   
 
   .chart-wrapper {
@@ -2157,49 +2146,7 @@ input[type=number] {
     font-size: 0.95rem;
     margin-left: 4px;
   }
-  .rechner-ergebnis {
-    margin-top: 20px;
-    padding: 1.2rem;
-    background-color: #ecfdf5;
-    border: 1px solid #10b981;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: #065f46;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  }
-  
-  
-  .rechner-hinweis {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0ea5e9;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #075985;
-  }
-  
-  
-  .steuer-hinweis {
-    background-color: #fefce8;
-    border-left: 4px solid #facc15;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #78350f;
-  }
-  
-  .rechner-hinweis:hover,
-.steuer-hinweis:hover {
-  background-color: #e0f2fe;
-}
-.rechner-ergebnis:hover {
-  background-color: #d1fae5;
-}
+
 
   
 /* 🌙 Dark Mode Styles für alle Rechner */
@@ -2234,7 +2181,7 @@ input[type=number] {
     .contact-form-container,
     .rechner-hinweis,
     .steuer-hinweis {
-      background-color: #111827;
+      background-color: #ffffff;
       border-color: #4b5563;
       color: #f3f4f6;
     }
@@ -2263,13 +2210,29 @@ input[type=number] {
     }
   
     .info-hinweis {
-      background-color: #1e293b;
-      border: 1px solid #4b5563;
-      color: #fcd34d;
-    }
+        background: rgba(0, 168, 181, 0.05);
+        border-left: 4px solid var(--accent-color);
+        padding: 20px;
+        margin-top: 25px;
+        border-radius: 10px;
+        font-size: 1rem;
+        color: var(--secondary-color);
+      }
+      
+      .info-hinweis::before {
+        content: "ℹ️ ";
+        font-size: 1.3rem;
+        margin-right: 6px;
+      }
+      
+      .info-hinweis p.small-hinweis {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+      
   
     #renditeErgebnis,
-    #rentenErgebnis,
     #riesterErgebnis {
       background-color: #111827;
       border: 1px solid #4b5563;
@@ -2300,4 +2263,475 @@ input[type=number] {
       background-color: #f3f4f6;
     }
   }
+  /* 🌙 Dark Mode – Burger-Menü */
+body.dark-mode .burger-menu {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+body.dark-mode .burger-menu span {
+    background: white;
+}
+
+  select {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  input:hover, select:hover {
+    border-color: var(--accent-color);
+  }
+ 
+/* Verbesserter Kontrast & Optik für alle Bottom-CTAs */
+#cta {
+    background: var(--background-gradient-light);
+    border: 2px solid var(--accent-color);
+    padding: 50px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 168, 181, 0.15);
+    transition: all 0.3s ease-in-out;
+  }
   
+  #cta h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+  }
+  
+  #cta p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+  
+  #cta .cta-button {
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  #cta .cta-button:hover {
+    background: var(--accent-color);
+  }
+
+  
+  .calc-wrapper {
+    background: var(--calc-bg-light);
+    color: var(--calc-text);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--calc-box-shadow);
+    margin: 40px 0;
+    transition: all 0.3s ease-in-out;
+  }
+  body.dark-mode .calc-wrapper {
+    background: var(--calc-bg-dark);
+    color: var(--calc-text-dark);
+  }
+
+  .calc-input-group {
+    margin-bottom: 20px;
+  }
+  .calc-input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .calc-input-group input,
+  .calc-input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--calc-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--calc-bg-light);
+    color: var(--calc-text);
+    transition: border-color 0.3s ease;
+  }
+  .calc-input-group input:focus,
+  .calc-input-group select:focus {
+    border-color: var(--calc-border-focus);
+    outline: none;
+  }
+  body.dark-mode .calc-input-group input,
+  body.dark-mode .calc-input-group select {
+    background: var(--calc-bg-dark);
+    color: var(--calc-text-dark);
+    border: 2px solid #374151;
+  }
+  .calc-hint {
+    background-color: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
+  body.dark-mode .calc-hint {
+    background-color: #1e3a8a;
+    border-left-color: #38bdf8;
+    color: #e0f2fe;
+  }
+  
+  .calc-alert {
+    background-color: #fefce8;
+    border-left: 4px solid #facc15;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
+  body.dark-mode .calc-alert {
+    background-color: #78350f;
+    border-left-color: #facc15;
+    color: #fef08a;
+  }
+  
+  .calc-output {
+    background-color: #ecfdf5;
+    border: 1px solid #10b981;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-top: 20px;
+    color: #065f46;
+  }
+  body.dark-mode .calc-output {
+    background-color: #064e3b;
+    border-color: #10b981;
+    color: #bbf7d0;
+  }
+  .calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .calc-section {
+    background: var(--box-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  body.dark-mode .calc-section {
+    background: var(--box-dark);
+    color: var(--text-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  .steuer-hinweis {
+    background-color: #fef9c3;
+    border-left-color: #facc15;
+    color: #78350f;
+  }
+  .inline-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .inline-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--accent-color); /* passt zur Corporate Identity */
+  }
+  .impact-output-box {
+    background: var(--background-gradient-light);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 6px 18px rgba(0, 168, 181, 0.12);
+    color: var(--primary-color);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+@keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+  .impact-output-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  
+  .impact-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  
+  .impact-list li::before {
+    content: "🌿 ";
+  }
+  input[type="range"] {
+    
+    width: 100%;
+    height: 8px;
+    background: #d1d5db;
+    border-radius: 10px;
+    outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  }
+  #investmentValue {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+  
+    .etf-ergebnis-box,
+    .info-hinweis {
+      padding: 1.2rem;
+    }
+  
+    .calculator-form {
+      gap: 1rem;
+    }
+  }
+/* 🎯 Verbessertes Design für Slider-Ausgabe */
+.slider-output-wrapper {
+    position: relative;
+    height: 30px;
+    margin-top: 10px;
+  }
+  
+  .slider-value-bubble {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    background: var(--background-soft);
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ℹ️ Optional: zentriert über dem Slider */
+  input[type="range"] + .slider-output-wrapper {
+    text-align: left;
+  }
+  
+  .slider-info {
+    display: flexbox;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+  }
+  
+    /* 🎯 Klarere Lesbarkeit der Output-Werte & Slider-Beschriftung */
+.slider-labels label,
+.slider-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color); /* oder z. B. #1F2937 für starken Kontrast */
+  margin-bottom: 6px;
+}
+
+output {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+/* Dark Mode für Output-Felder & Slider-Beschriftung */
+body.dark-mode .slider-labels label,
+body.dark-mode .slider-value,
+body.dark-mode output {
+  color: var(--calc-text-dark); /* z. B. sehr helles Grau */
+}
+.rechner-ergebnis {
+    background: var(--background-soft);
+    border-left: 4px solid var(--accent-color);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Dark Mode */
+  body.dark-mode .rechner-ergebnis {
+    background: var(--box-dark);
+    color: var(--text-dark);
+  }
+  .slider-group {
+    margin-bottom: 20px;
+  }
+  
+  .slider-group input[type="range"] {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  #calc-wrapper {
+    background: var(--background-gradient-light);
+    border: 2px solid var(--accent-color);
+    padding: 40px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 168, 181, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #calc-wrapper h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .results-box {
+    background: var(--box-light);
+    border-left: 6px solid var(--accent-color);
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .results-box p {
+    margin: 10px 0;
+  }
+/* Container für den Haushaltsrechner */
+#calc-wrapper {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--box-light, #ffffff);
+    border-radius: 12px;
+    box-shadow: var(--calc-box-shadow, 0 2px 6px rgba(0, 0, 0, 0.08));
+    transition: background 0.3s ease;
+  }
+  
+  /* Überschrift des Rechners */
+  #calc-wrapper h2 {
+    text-align: center;
+    color: var(--primary-color, #1F3B5C);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+  
+  /* Formular des Rechners */
+  .calculator-form {
+    width: 100%;
+  }
+  
+  /* Grid-Layout für die Input-Felder */
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Fieldset- und Legend-Stil */
+  .calculator-form fieldset {
+    border: none;
+    padding: 1rem;
+    background: transparent;
+  }
+  
+  .calculator-form legend {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: var(--secondary-color, #4F4F4F);
+  }
+  
+  /* Stil für die Eingabe-Blöcke */
+  .input-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .input-block label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--secondary-color, #4F4F4F);
+  }
+  
+  .input-block input[type="number"] {
+    padding: 0.75rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input-block input[type="number"]:focus {
+    border-color: var(--accent-color, #00A8B5);
+    outline: none;
+  }
+  
+  /* Ergebnisfeld Styling */
+  .rechner-ergebnis {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--calc-bg-light, #ffffff);
+    border: 2px solid var(--calc-border, #d1d5db);
+    border-radius: 12px;
+    box-shadow: var(--calc-box-shadow, 0 2px 6px rgba(0, 0, 0, 0.08));
+    color: var(--calc-text, #1f2937);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .rechner-ergebnis h3 {
+    margin-top: 0;
+    color: var(--primary-color, #1F3B5C);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .rechner-ergebnis p {
+    margin: 0.5rem 0;
+  }
+  
+  /* Responsive Anpassungen */
+  @media (max-width: 768px) {
+    #calc-wrapper {
+      padding: 1.5rem;
+    }
+    .input-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+   

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haushaltsrechner – FairFinance</title>
+  <meta name="description" content="Berechnen Sie Ihre Haushaltsausgaben" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="haushaltsrechner.js"></script>
+</head>
+<body>
+  <!-- 🔹 Navigation -->
+  <header>
+    <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <div class="logo"><a href="index.html">FairFinance Finanzberatung</a></div>
+        <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+        <ul class="desktop-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <ul class="mobile-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 🎯 Hero -->
+  <section class="hero">
+    <h1>💶 Haushaltsrechner</h1>
+    <p class="hero-subline">Wie viel bleibt Ihnen am Monatsende übrig? Berechnen Sie Ihre Haushaltsbilanz in wenigen Schritten.</p>
+    <div class="cta-container">
+      <a href="contact.html" class="cta-button">📋 Kostenlose Budgetberatung anfragen</a>
+    </div>
+  </section>
+
+  <!-- Rechner-Formular ohne Button (automatische Berechnung bei Änderung) -->
+  <section id="calc-wrapper">
+    <h2>📋 Ihre Einnahmen & Ausgaben</h2>
+    <form id="budgetForm" class="calculator-form">
+      <div class="input-grid">
+        <fieldset>
+          <legend>Einnahmen (monatlich)</legend>
+          <div class="input-block">
+            <label for="einkommen">Nettoeinkommen</label>
+            <input type="number" id="einkommen" placeholder="z. B. 2500" />
+          </div>
+          <div class="input-block">
+            <label for="kindergeld">Kindergeld/Zuschüsse</label>
+            <input type="number" id="kindergeld" />
+          </div>
+          <div class="input-block">
+            <label for="neben">Nebeneinkünfte</label>
+            <input type="number" id="neben" />
+          </div>
+          <div class="input-block">
+            <label for="sonstigeEinnahmen">Sonstige Einnahmen</label>
+            <input type="number" id="sonstigeEinnahmen" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Fixkosten</legend>
+          <div class="input-block">
+            <label for="miete">Miete/Wohnkosten</label>
+            <input type="number" id="miete" />
+          </div>
+          <div class="input-block">
+            <label for="nebenkosten">Strom/Gas/Wasser</label>
+            <input type="number" id="nebenkosten" />
+          </div>
+          <div class="input-block">
+            <label for="versicherung">Versicherungen</label>
+            <input type="number" id="versicherung" />
+          </div>
+          <div class="input-block">
+            <label for="internet">Internet & Handy</label>
+            <input type="number" id="internet" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Variable Ausgaben</legend>
+          <div class="input-block">
+            <label for="lebensmittel">Lebensmittel & Drogerie</label>
+            <input type="number" id="lebensmittel" />
+          </div>
+          <div class="input-block">
+            <label for="kleidung">Kleidung & Schuhe</label>
+            <input type="number" id="kleidung" />
+          </div>
+          <div class="input-block">
+            <label for="freizeit">Freizeit & Hobbys</label>
+            <input type="number" id="freizeit" />
+          </div>
+          <div class="input-block">
+            <label for="mobilitaet">Auto & Mobilität</label>
+            <input type="number" id="mobilitaet" />
+          </div>
+          <div class="input-block">
+            <label for="gesundheit">Gesundheit & Medikamente</label>
+            <input type="number" id="gesundheit" />
+          </div>
+          <div class="input-block">
+            <label for="sonstigeAusgaben">Sonstige Ausgaben</label>
+            <input type="number" id="sonstigeAusgaben" />
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+    <!-- Ergebnisanzeige inklusive Sparquotenanalyse -->
+    <div id="ergebnis" class="rechner-ergebnis" aria-live="polite"></div>
+  </section>
+
+  <!-- 📞 Floating-Kontakt-Button -->
+  <button id="floating-button">📞</button>
+  <div id="contact-options">
+    <a href="contact.html">📩 Kontaktformular</a>
+    <a href="tel:+494211234567">📞 Anrufen</a>
+    <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- 📌 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">Häufige Fragen</a>
+      </div>
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+</body>
+</html>

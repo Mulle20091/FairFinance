@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETF-Rentenplaner | FairFinance</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="etf-rente.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+  <nav class="sticky-nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">FairFinance Finanzberatung</a></div>
+      <button class="burger-menu" aria-label="Menü öffnen">☰</button>
+      <ul class="desktop-menu">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="about.html">Über uns</a></li>
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <ul class="mobile-menu">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="about.html">Über uns</a></li>
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>ETF-Rentenplaner</h1>
+  <p class="hero-subline">Berechnen Sie Ihre zukünftige ETF-Rente unter Berücksichtigung von Ausschüttung, Teilfreistellung und Kapitalverzehr.</p>
+  <div class="cta-container">
+    <a href="contact.html" class="cta-button">🔍 Persönliche ETF-Analyse anfragen</a>
+  </div>
+  
+</section>
+
+<section class="calc-section" id="calc-wrapper">
+    <h2 class="calculator-title">📈 Ihre ETF-Rentenprognose</h2>
+    <div class="contact-form-container">
+      <form id="etfForm" class="calculator-form">
+        
+        <div class="form-group">
+          <label for="einstieg">Startkapital <span class="einheit">(in €)</span></label>
+          <input type="number" id="einstieg" placeholder="z. B. 10.000" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="sparrate">Monatliche Sparrate <span class="einheit">(in €)</span></label>
+          <input type="number" id="sparrate" placeholder="z. B. 200" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="rendite">Jahresrendite Ø <span class="einheit">(in %)</span></label>
+          <input type="number" id="rendite" step="0.1" placeholder="z. B. 6,5" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="laufzeit">Sparphase <span class="einheit">(Jahre)</span></label>
+          <input type="number" id="laufzeit" placeholder="z. B. 30" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="entnahme">Entnahmephase <span class="einheit">(Jahre)</span></label>
+          <input type="number" id="entnahme" placeholder="z. B. 20" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="ausschüttung">ETF-Art</label>
+          <select id="ausschüttung">
+            <option value="thesaurierend">Thesaurierend (Wiederanlage)</option>
+            <option value="ausschüttend">Ausschüttend (Auszahlung)</option>
+          </select>
+        </div>
+  
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="kapitalverzehr" />
+            <label for="kapitalverzehr">Kapitalverzehr berücksichtigen</label>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="teilfreistellung" checked />
+            <label for="teilfreistellung">30 % Teilfreistellung anwenden</label>
+          </div>
+          
+  
+        <p class="info-hinweis rechner-hinweis">
+          🧠 Hinweis: Die Berechnung basiert auf statistischen Durchschnittswerten. Eine individuelle Beratung ersetzt der Rechner nicht.
+        </p>
+      </form>
+  
+      <div id="etfErgebnis" class="rechner-ergebnis results-box" aria-live="polite">
+      </div>
+
+  
+      <div class="info-hinweis steuer-hinweis">
+        💡 ETFs bieten langfristiges Renditepotenzial – besonders bei konsequenter Wiederanlage. Die steuerliche Belastung hängt u.a. von der Haltedauer, der Entnahmestrategie und der Fondsart ab. Nutzen Sie unsere Expertise für Ihre optimale ETF-Strategie.
+      </div>
+    </div>
+  
+    <div id="cta" class="faq-cta">
+      <h2>Ihre ETF-Rente – transparent & planbar</h2>
+      <p>Ob Sparplan oder Entnahmephase – wir berechnen gemeinsam mit Ihnen, wie sich Ihre ETF-Strategie im Ruhestand auszahlt.</p>
+      <a href="contact.html" class="cta-button">Jetzt Beratung anfragen</a>
+    </div>
+  </section>
+  
+<button id="floating-button">📞</button>
+<div id="contact-options">
+  <a href="contact.html">📩 Kontaktformular</a>
+  <a href="tel:+494211234567">📞 Anrufen</a>
+  <a href="https://wa.me/YOURWHATSAPPNUMBER" target="_blank">💬 WhatsApp</a>
+</div>
+
+ <!-- 📌 Footer mit Trust-Siegeln -->
+ <footer>
+    <div class="footer-container">
+      <div class="footer-trust">
+        <div class="trust-item">
+          <img src="img/siegel1.webp" alt="Top Finanzberatung" loading="lazy" />
+          <p>Top Finanzberatung 2025 (Geprüft)</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel2.webp" alt="Forum Nachhaltige Geldanlage" loading="lazy" />
+          <p>Mitglied im Forum Nachhaltige Geldanlage</p>
+        </div>
+        <div class="trust-item">
+          <img src="img/siegel3.webp" alt="Beste Kundenbewertungen 2025" loading="lazy" />
+          <p>Hervorragende Kundenbewertungen</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+        <a href="faq.html">Häufige Fragen</a>
+      </div>
+
+      <p>&copy; 2025 FairFinance Finanzberatung. Alle Rechte vorbehalten.</p>
+    </div>
+
+    <!-- 🌙 Dark Mode Toggle -->
+    <div class="dark-mode-footer">
+      <button id="darkModeToggle" aria-label="Dark Mode umschalten">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-text" id="toggleText">Dunkelmodus</span>
+      </button>
+    </div>
+  </footer>
+  
+  </body>
+</html>
